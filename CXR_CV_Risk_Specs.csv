@@ -1,0 +1,8 @@
+#PLCO CV-Risk model to determine risk-equivalence to biologic age based on CV death only. Label for this dataset is 15-year CV mortality probability based on a risk factor model or 1 if the individual died of CV causes. Uisng only T0 and T1 images for training, Fixed image size to 224 to acoomodate the Tiny model. 5-model ensemble.,,,,,,,,,,,,,,,,
+,Model_Name,Dataset,Batch_Size,Epochs,MixUp,Architecture,Target,LR,Bootstrap,Two_Phase,Data_Augs,Segmentation_Model,Image_Size,Train_Metric,Tune_Metric,Normalize,Num_Classes
+0,PLCO_CV_Risk_010422_0,/mnt/md0/vraghu/PLCO/PLCO_CV_Binary_With_Model_Labels_T0_T1_121721.csv,16,62,0,densenet121,probs,5.72E-05,1,0,1.697231793,0,224,0.449177558,0.449548264,1,1
+1,PLCO_CV_Risk_010422_1,/mnt/md0/vraghu/PLCO/PLCO_CV_Binary_With_Model_Labels_T0_T1_121721.csv,8,69,1,tiny,probs,4.103596546799943e-05|8.11936951498732e-05,1,1,1.428235636,0,224,0.218194254,0.218076078,1,1
+2,PLCO_CV_Risk_010422_2,/mnt/md0/vraghu/PLCO/PLCO_CV_Binary_With_Model_Labels_T0_T1_121721.csv,16,46,0,age,probs,9.46E-05,1,0,1.029768825,0,224,0.220549203,0.220809144,1,1
+3,PLCO_CV_Risk_010422_3,/mnt/md0/vraghu/PLCO/PLCO_CV_Binary_With_Model_Labels_T0_T1_121721.csv,16,67,0,densenet121,probs,3.37E-05,1,0,1.20967041,0,224,0.446345112,0.445142643,1,1
+4,PLCO_CV_Risk_010422_4,/mnt/md0/vraghu/PLCO/PLCO_CV_Binary_With_Model_Labels_T0_T1_121721.csv,16,36,1,tiny,probs,4.980001881223242e-05|1.7552970618888632e-05,1,1,1.503300104,0,224,0.219604336,0.221063361,1,1
+# Completed Training: 01_05_2022,,,,,,,,,,,,,,,,,
