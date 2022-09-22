@@ -154,16 +154,25 @@ nn.Linear(512,numFeatures,bias=True),nn.ReLU(inplace=True),nn.BatchNorm1d(numFea
         except:
             print("Architecture not found for model #: " + str(x))
             sys.exit(0)
+
+
+
+
+
+
             
         learn.model_dir = "."
+
+        learn.model = nn.Sequential(learn.model,nn.Sigmoid(),nn.Flatten(start_dim=0))
+
         learn.load(mdl_path + "_" + str(x))
         preds,y = learn.get_preds(ds_idx=1,reorder=False)
         
 
         ###output predictions as column with model name
-        pred_arr[:,x] = np.array(preds[:,0])
+        pred_arr[:,x] = np.array(preds)
     weights = [0,0,0.835725,0,1.823355]
     predictions = np.matmul(pred_arr,np.array(weights)) - 2.694890
-    output_df['CXR_CV_Risk'] = predictions
+    output_df['CXR_CV_Risk'] = np.divide(np.exp(predictions),1+np.exp(predictions))
     output_df = output_df.drop(["valid_col","Dummy","Prediction"],axis=1)
     output_df.to_csv(arguments['<output_file>'],index=False)
