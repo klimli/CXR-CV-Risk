@@ -1,8 +1,6 @@
-# CXR-Lung-Risk: Deep learning to estimate lung disease mortality from chest radiographs
+# CXR-CV-Risk: Deep learning to estimate cardiovascular disease risk from chest radiographs
 
 ![CXR-Age Grad-CAM](/images/GradCAM_Github_020121.png)
-
-[Weiss J*, Raghu VK*, Hoffmann, U., Aerts HJWL, and Lu, MT. Deep learning to estimate biological age from chest radiographs. Journal of the American College of Cardiology: Cardiovascular Imaging 2021; Epub ahead of print](<https://authors.elsevier.com/a/1clbm,i2Xrn9-f>) *Equal contribution
 
 
 ## Overview
@@ -29,26 +27,21 @@ For the model weights to download, Github's large file service must be downloade
 This example is best run in a conda environment:
 
 ```bash
-git lfs clone https://github.com/vineet1992/CXR-Age/
+git lfs clone https://github.com/vineet1992/CXR-CV-Risk/
 cd location_of_repo
-conda env create -n CXR_Age -f environment.yml
-conda activate CXR_Age
-python run_model.py dummy_datasets/test_images/ development/models/PLCO_Fine_Tuned_120419 output/output.csv --modelarch=age --type=continuous --size=224
+conda env create -n CXR_CV -f spec-list.txt
+conda activate CXR_CV
+python run_cxr_cv_risk.py dummy_datasets/test_images/ path/to/model/weights/PLCO_CV_Risk_010422 output/output.csv
 ```
 
-To generate saliency maps for each estimate, add "--saliency=path/to/output/saliency/maps". Next is a complete example of this command
-
-```bash
-python run_model.py dummy_datasets/test_images/ development/models/PLCO_Fine_Tuned_120419 output/output.csv --modelarch=age --type=continuous --size=224 --saliency=saliency_maps
-```
-Dummy image files are provided in `dummy_datasets/test_images/;`. Weights for the CXR-Age model are in `development/models/PLCO_Fine_Tuned_120419.pth`. 
+Dummy image files are provided in `dummy_datasets/test_images/;`. Weights for the CXR-CV-Risk model can be accessed through this link: <>
 
 ## Datasets
 PLCO (NCT00047385) data used for model development and testing are available from the National Cancer Institute (NCI, https://biometry.nci.nih.gov/cdas/plco/). NLST (NCT01696968) testing data is available from the NCI (https://biometry.nci.nih.gov/cdas/nlst/) and the American College of Radiology Imaging Network (ACRIN, https://www.acrin.org/acrin-nlstbiorepository.aspx). Due to the terms of our data use agreement, we cannot distribute the original data. Please instead obtain the data directly from the NCI and ACRIN.
 
-The `data` folder provides the image filenames and the CXR-Age estimates. "File" refers to image filenames and "CXR-Age" refers to the CXR-Age estimate: 
-* `PLCO_Age_Estimates.csv` contains the CXR-Age estimates in the PLCO testing dataset.
-* `NLST_Age_Estimates.csv` contains the CXR-Age estimate in the NLST testing dataset. The format for "File" is (original participant directory)_(original DCM filename).png
+The `data` folder provides the image filenames and the CXR-CV-Risk estimates. "File" refers to image filenames and "CXR-CV-Risk" refers to the CXR-CV-Risk estimate: 
+* `PLCO_Age_Estimates.csv` contains the CXR-CV-Risk estimates in the PLCO testing dataset.
+* `NLST_Age_Estimates.csv` contains the CXR-CV-Risk estimate in the NLST testing dataset. The format for "File" is (original participant directory)_(original DCM filename).png
 
 
 ## Image processing
