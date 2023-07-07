@@ -4,21 +4,10 @@
 
 
 ## Overview
-Age-related chronic disease causes 60% of deaths in the US. Primary prevention (e.g. statin to prevent cardiovascular disease) and screening (e.g. screening for lung cancer with chest CT) interventions are based on chronological age, but chronological age is an imperfect measure of aging. A measure of biological age that more accurately predicts longevity and disease would enable healthcare providers to better personalize care and help researchers address factors underlying the aging process.
-
-Chest x-rays (radiographs or CXRs) are among the most common diagnostic imaging tests in medicine. We hypothesized that a convolutional neural network (CNN) could extract information from these x-rays to estimate a person's chest x-ray age (or CXR-Age) - a summary measure of overall health based on the chest x-ray image. We tested whether CXR-Age predicted life expectancy beyond chronological age.
-
-CXR-Age outputs a number (in years) reflecting all-cause mortality risk based on only a single chest radiograph image. CXR-Age was developed in two steps. First, it was trained to predict chronological age in over 100,000 images from publicly available chest x-ray datasets (CheXpert, PadCHEST, and NIH CXR-14). Then, the model was fine-tuned to estimate a "biological age" in XX persons from the Prostate, Lung, Colorectal and Ovarian cancer screening trial (PLCO), a randomized controlled trial of chest x-ray to screen healthy persons for lung cancer. 
-
-CXR-Age was tested (referred to as "validation" in the publication) in an independent cohort of 40,967 individuals from PLCO and externally tested in 5,493 heavy smokers from the National Lung Screening Trial (NLST). CXR-LC predicted long-term all-cause (CXR-Age HR 2.26 per 5 years; p < 0.001) and cardiovascular mortality (CXR-Age cause specific HR 2.45 per 5 years, p< 0.001) in the PLCO testing dataset. Similar results were found in NLST. Adding CXR-Age to a multivariable model of conventional cardiovascular risk factors resulted in significant improvements for predicting both outcomes in both datasets. 
-
-**Central Illustration of CXR-Age**
-![CXR-Age Central Illustration](/images/Central_Illustration.png)
-
-This repo contains data intended to promote reproducible research. It is not for clinical care or commercial use. 
+CXR model to predict 10-year cardiovascular risk using an ensemble of convolutional neural networks.
 
 ## Installation
-This inference code was tested on Ubuntu 18.04.3 LTS, conda version 4.8.0, python 3.7.7, fastai 1.0.61, cuda 10.2, pytorch 1.5.1 and cadene pretrained models 0.7.4. A full list of dependencies is listed in `environment.yml`. 
+This inference code was tested on Ubuntu 18.04.3 LTS, conda version 4.8.0, python 3.9.9, fastai 2.5.3, cuda 11.2, pytorch 1.10 and cadene pretrained models 0.7.4. 
 
 Inference can be run on the GPU or CPU, and should work with ~4GB of GPU or CPU RAM. For GPU inference, a CUDA 10 capable GPU is required.
 
@@ -29,7 +18,8 @@ This example is best run in a conda environment:
 ```bash
 git lfs clone https://github.com/vineet1992/CXR-CV-Risk/
 cd location_of_repo
-conda env create -n CXR_CV -f spec-list.txt
+conda create -n CXR_CV
+*install packages as listed above*
 conda activate CXR_CV
 python run_cxr_cv_risk.py dummy_datasets/test_images/ path/to/model/weights/PLCO_CV_Risk_010422 output/output.csv
 ```
