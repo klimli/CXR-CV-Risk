@@ -11,7 +11,7 @@ This inference code was tested on Ubuntu 18.04.3 LTS, conda version 4.8.0, pytho
 
 Inference can be run on the GPU or CPU, and should work with ~4GB of GPU or CPU RAM. For GPU inference, a CUDA 10 capable GPU is required.
 
-For the model weights to download, Github's large file service must be downloaded and installed: https://git-lfs.github.com/ 
+Model weights are available via Dropbox: https://www.dropbox.com/sh/ao93iyib605oq5w/AACuqINPnKF0k4ekMPtUSIExa?dl=0
 
 This example is best run in a conda environment:
 
@@ -24,7 +24,7 @@ conda activate CXR_CV
 python run_cxr_cv_risk.py dummy_datasets/test_images/ path/to/model/weights/PLCO_CV_Risk_010422 output/output.csv
 ```
 
-Dummy image files are provided in `dummy_datasets/test_images/;`. Weights for the CXR-CV-Risk model can be accessed through this link: <>
+Dummy image files are provided in `dummy_datasets/test_images/;`
 
 ## Datasets
 PLCO (NCT00047385) data used for model development and testing are available from the National Cancer Institute (NCI, https://biometry.nci.nih.gov/cdas/plco/). NLST (NCT01696968) testing data is available from the NCI (https://biometry.nci.nih.gov/cdas/nlst/) and the American College of Radiology Imaging Network (ACRIN, https://www.acrin.org/acrin-nlstbiorepository.aspx). Due to the terms of our data use agreement, we cannot distribute the original data. Please instead obtain the data directly from the NCI and ACRIN.
