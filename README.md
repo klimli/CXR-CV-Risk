@@ -18,8 +18,10 @@ This example is best run in a conda environment:
 ```bash
 git lfs clone https://github.com/vineet1992/CXR-CV-Risk/
 cd location_of_repo
-conda create -n CXR_CV
-*install packages as listed above*
+conda create -n CXR_CV python=3.9
+<install pytorch according to CUDA version and OS> See https://pytorch.org/get-started/locally/
+<for CUDA 12.1 on windows> conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia
+conda install -c fastchan fastai anaconda <follow instructions for your OS here: https://github.com/fastai/fastai>
 conda activate CXR_CV
 python run_cxr_cv_risk.py dummy_datasets/test_images/ path/to/model/weights/PLCO_CV_Risk_010422 output/output.csv
 ```
