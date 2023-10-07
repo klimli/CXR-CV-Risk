@@ -22,10 +22,10 @@ mkdir models
 ###Download model weights from Dropbox and include them in the "models" directory
 conda create -n CXR_CV python=3.9
 conda activate CXR_CV
-##install pytorch according to CUDA version and OS See https://pytorch.org/get-started/locally/
-##for CUDA 12.1 on windows
-conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia
-conda install -c fastchan fastai anaconda ##follow instructions for your OS here: https://github.com/fastai/fastai>
+conda install -c fastai fastai ##follow instructions for your OS here: https://github.com/fastai/fastai>
+## You may need to install pytorch according to CUDA version and OS first - see https://pytorch.org/get-started/locally/
+conda install docopt
+pip install pretrainedmodels==0.7.4
 
 python run_cxr_cv_risk.py dummy_datasets/test_images/ path/to/model/weights/PLCO_CV_Risk_010422 output/output.csv
 ```
