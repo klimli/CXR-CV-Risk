@@ -18,6 +18,8 @@ This example is best run in a conda environment:
 ```bash
 git lfs clone https://github.com/vineet1992/CXR-CV-Risk/
 cd location_of_repo
+mkdir models
+###Download model weights from Dropbox and include them in the "models" directory
 conda create -n CXR_CV python=3.9
 conda activate CXR_CV
 ##install pytorch according to CUDA version and OS See https://pytorch.org/get-started/locally/
