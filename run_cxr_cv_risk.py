@@ -63,8 +63,9 @@ if __name__ == '__main__':
     output_df['valid_col'] = np.repeat(True,output_df.shape[0])
 
     #Create an additional "fake" image to act as the training dataset
-    final_df = output_df.append(output_df.iloc[output_df.shape[0]-1,:],ignore_index=True)
-    final_df.valid_col[final_df.shape[0]-1] = False
+    final_df = pd.concat([output_df,output_df.iloc[[-1]]],ignore_index=True)
+    #final_df.valid_col[final_df.shape[0]-1] = False
+    final_df.loc[final_df.shape[0]-1,'valid_col'] = False
 
         
         
@@ -148,9 +149,14 @@ if __name__ == '__main__':
                 learn = cnn_learner(imgs, mdl,n_out=out_nodes)
             if(m=="age"):
                 numFeatures = 16
-                learn.model[1] = nn.Sequential(*learn.model[1][:-5],nn.Linear(1024,512,bias=True),nn.ReLU(inplace=True),nn.BatchNorm1d(512),nn.Dropout(p=0.5),
+                if(torch.has_cuda):
+                    learn.model[1] = nn.Sequential(*learn.model[1][:-5],nn.Linear(1024,512,bias=True),nn.ReLU(inplace=True),nn.BatchNorm1d(512),nn.Dropout(p=0.5),
 nn.Linear(512,numFeatures,bias=True),nn.ReLU(inplace=True),nn.BatchNorm1d(numFeatures),
                                 nn.Linear(numFeatures,out_nodes,bias=True)).cuda()
+                else:
+                    learn.model[1] = nn.Sequential(*learn.model[1][:-5],nn.Linear(1024,512,bias=True),nn.ReLU(inplace=True),nn.BatchNorm1d(512),nn.Dropout(p=0.5),
+nn.Linear(512,numFeatures,bias=True),nn.ReLU(inplace=True),nn.BatchNorm1d(numFeatures),
+                                nn.Linear(numFeatures,out_nodes,bias=True))
         except:
             print("Architecture not found for model #: " + str(x))
             sys.exit(0)
@@ -165,7 +171,7 @@ nn.Linear(512,numFeatures,bias=True),nn.ReLU(inplace=True),nn.BatchNorm1d(numFea
 
         learn.model = nn.Sequential(learn.model,nn.Sigmoid(),nn.Flatten(start_dim=0))
 
-        learn.load(mdl_path + "_" + str(x))
+        learn.load(os.path.join(os.path.abspath(os.getcwd()),mdl_path + "_" + str(x)))
         preds,y = learn.get_preds(ds_idx=1,reorder=False)
         
 
