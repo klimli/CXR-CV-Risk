@@ -32,11 +32,6 @@ Dummy image files are provided in `dummy_datasets/test_images/;`
 ## Datasets
 PLCO (NCT00047385) data used for model development and testing are available from the National Cancer Institute (NCI, https://biometry.nci.nih.gov/cdas/plco/). NLST (NCT01696968) testing data is available from the NCI (https://biometry.nci.nih.gov/cdas/nlst/) and the American College of Radiology Imaging Network (ACRIN, https://www.acrin.org/acrin-nlstbiorepository.aspx). Due to the terms of our data use agreement, we cannot distribute the original data. Please instead obtain the data directly from the NCI and ACRIN.
 
-The `data` folder provides the image filenames and the CXR-CV-Risk estimates. "File" refers to image filenames and "CXR-CV-Risk" refers to the CXR-CV-Risk estimate: 
-* `PLCO_Age_Estimates.csv` contains the CXR-CV-Risk estimates in the PLCO testing dataset.
-* `NLST_Age_Estimates.csv` contains the CXR-CV-Risk estimate in the NLST testing dataset. The format for "File" is (original participant directory)_(original DCM filename).png
-
-
 ## Image processing
 PLCO radiographs were provided as scanned TIF files by the NCI. TIFs were converted to PNGs with a minimum dimension of 512 pixels with ImageMagick v6.8.9-9. 
 
