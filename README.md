@@ -1,8 +1,5 @@
 # CXR-CV-Risk: Deep learning to estimate cardiovascular disease risk from chest radiographs
 
-![CXR-Age Grad-CAM](/images/GradCAM_Github_020121.png)
-
-
 ## Overview
 CXR model to predict 10-year cardiovascular risk using an ensemble of convolutional neural networks.
 
