@@ -34,7 +34,7 @@ PLCO (NCT00047385) data used for model development and testing are available fro
 ## Model Development Details
 The model was developed using a 5-model ensemble approach, where each model training run used hyperparameters randomly chosen from the distributions below:
 
-[Hyperparameter Ranges](path/to/file.csv)
+[Hyperparameter Ranges](tables/Hyperparameter_Ranges.csv)
 
 ## Image processing
 PLCO radiographs were provided as scanned TIF files by the NCI. TIFs were converted to PNGs with a minimum dimension of 512 pixels with ImageMagick v6.8.9-9. 
