@@ -32,9 +32,15 @@ Dummy image files are provided in `dummy_datasets/test_images/;`
 PLCO (NCT00047385) data used for model development and testing are available from the National Cancer Institute (NCI, https://biometry.nci.nih.gov/cdas/plco/). NLST (NCT01696968) testing data is available from the NCI (https://biometry.nci.nih.gov/cdas/nlst/) and the American College of Radiology Imaging Network (ACRIN, https://www.acrin.org/acrin-nlstbiorepository.aspx). Due to the terms of our data use agreement, we cannot distribute the original data. Please instead obtain the data directly from the NCI and ACRIN.
 
 ## Model Development Details
-The model was developed using a 5-model ensemble approach, where each model training run used hyperparameters randomly chosen from the distributions below:
+The model was developed using a 5-model ensemble approach, where each model training run used hyperparameters randomly chosen from the distributions below. These hyperparameter ranges were chosen based on empirical analysis in the tuning portion of the PLCO dataset. L-1 penalized regression was used to identify which models in the 5-model ensemble had independent predictive power for cardiovascular mortality. Ultimately, only 2 models were used in the final CXR-CVD-Risk model. Additional model development details are available in the manuscript's Supplement.
 
 [Hyperparameter Ranges](tables/Hyperparameter_Ranges.csv)
+
+
+## Additional Results
+The main results of our initial study showed that the CXR-CVD-Risk model predicted 10-year cardiovascular events with similar performance to the ASCVD risk score in MGB patients who had a routine chest radiograph image. For full results please reference the paper. Here, we include an additional result comparing demographics and cardiovascular risk profiles of those that had discordant risk estimates from the CXR model and the ASCVD risk score. Overall, we find that those at high-risk according to the CXR model, but low risk according to the ASCVD risk score were generally younger, non-smokers, normotensive, and had lower LDL-C levels. 
+
+[Discordant Cases](tables/Discordant_Cases.csv). 
 
 ## Image processing
 PLCO radiographs were provided as scanned TIF files by the NCI. TIFs were converted to PNGs with a minimum dimension of 512 pixels with ImageMagick v6.8.9-9. 
