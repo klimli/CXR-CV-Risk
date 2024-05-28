@@ -1,6 +1,6 @@
-Variables,CXR CVD-Risk score ?7.5%; ASCVD Risk score <7.5%,ASCVD Risk score ?7.5%; CXR CVD-Risk score <7.5%
+Variables,CXR CVD-Risk score >7.5%; ASCVD Risk score <7.5%,ASCVD Risk score >7.5%; CXR CVD-Risk score <7.5%
 Number of individuals,15,23
-Age (mean±SD),57.7±5.1,63.1±7.0
+Age (meanÂ±SD),57.7Â±5.1,63.1Â±7.0
 Sex (male),40.0% (6),47.8% (11)
 Race,,
 White,66.7% (10),73.9% (17)
@@ -12,13 +12,13 @@ Never,80.0% (12),43.5% (10)
 Former,6.7% (1),4.3% (1)
 Current,13.3% (2),52.2% (12)
 Treated Hypertension,33.3% (5),60.9% (14)
-"Systolic blood pressure, mmHg (mean±SD)",125.2±9.0,135.8±13.8
-"Lipid levels, mg/dl (mean±SD)",,
-Total cholesterol,194.1±22.5,197.6±27.8
-LDL cholesterol,111.42±19.0,122.2±29.6
-HDL cholesterol,61.3±19.7,44.9±16.7
-CXR CVD-Risk (mean±SD),11.4±3.2,5.7±0.75
-ASCVD Risk (mean±SD),4.7±1.9,15.0±5.4
+"Systolic blood pressure, mmHg (meanÂ±SD)",125.2Â±9.0,135.8Â±13.8
+"Lipid levels, mg/dl (meanÂ±SD)",,
+Total cholesterol,194.1Â±22.5,197.6Â±27.8
+LDL cholesterol,111.42Â±19.0,122.2Â±29.6
+HDL cholesterol,61.3Â±19.7,44.9Â±16.7
+CXR CVD-Risk (meanÂ±SD),11.4Â±3.2,5.7Â±0.75
+ASCVD Risk (meanÂ±SD),4.7Â±1.9,15.0Â±5.4
 Incident 10-year MACE,100% (15),100% (23)
 Myocardial infarction,53.3% (8),39.1% (9)
 Stroke,46.7% (7),60.9% (14)
