@@ -1,0 +1,7 @@
+Hyperparameter,Range
+Number of epochs,"[40,80] selected uniformly at random"
+Batch Size,Randomly chosen as 8 or 16
+Model architecture,"Randomly chosen from densenet121, resnet34, or CBRTiny"
+Learning Rate,"[1e-5,1e-6] selected uniformly at random"
+Mix-Up Data Augmentation,50% chance
+"Two-Phase Training (Training with high learning rate for the first half of epochs, low learning rate for second half)",50% chance
