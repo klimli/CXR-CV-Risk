@@ -1,6 +1,6 @@
 # CXR-CVD-Risk: Deep learning to predict 10-year cardiovascular risk from chest radiographs
 
-[Weiss J, Raghu VK, Paruchuri K, Zinzuwadia AN, Natarajan P, Aerts HJWL, and Lu MT. Deep learning to estimate cardiovascular risk from chest radiographs: A risk prediction study. *Annals of Internal Medicine*. 2024;177(4):409-17. [doi:10.1001/jamanetworkopen.2019.7416](https://doi.org/10.7326/M23-1898)](https://www.acpjournals.org/doi/10.7326/M23-1898).
+[Weiss J, Raghu VK, Paruchuri K, Zinzuwadia AN, Natarajan P, Aerts HJWL, and Lu MT. Deep learning to estimate cardiovascular risk from chest radiographs: A risk prediction study. *Annals of Internal Medicine*. 2024;177(4):409-17. doi:10.1001/jamanetworkopen.2019.7416](https://www.acpjournals.org/doi/10.7326/M23-1898).
 
 [Audio commentary](https://edhub.ama-assn.org/jn-learning/audio-player/17718397)
 
