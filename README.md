@@ -1,7 +1,8 @@
-# CXR-CV-Risk: Deep learning to estimate cardiovascular disease risk from chest radiographs
+# CXR-CVD-Risk: Deep learning to predict 10-year cardiovascular risk from chest radiographs
 
-## Overview
-CXR model to predict 10-year cardiovascular risk using an ensemble of convolutional neural networks.
+[Weiss J, Raghu VK, Paruchuri K, Zinzuwadia AN, Natarajan P, Aerts HJWL, and Lu MT. Deep learning to estimate cardiovascular risk from chest radiographs: A risk prediction study. *Annals of Internal Medicine*. 2024;177(4):409-17. [doi:10.1001/jamanetworkopen.2019.7416](https://doi.org/10.7326/M23-1898)](https://www.acpjournals.org/doi/10.7326/M23-1898).
+
+[Audio commentary](https://edhub.ama-assn.org/jn-learning/audio-player/17718397)
 
 ## Installation
 This inference code was tested on Ubuntu 18.04.3 LTS, conda version 4.8.0, python 3.9.9, fastai 2.5.3, cuda 11.2, pytorch 1.10 and cadene pretrained models 0.7.4. 
