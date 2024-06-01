@@ -172,6 +172,8 @@ nn.Linear(512,numFeatures,bias=True),nn.ReLU(inplace=True),nn.BatchNorm1d(numFea
         learn.model = nn.Sequential(learn.model,nn.Sigmoid(),nn.Flatten(start_dim=0))
 
         learn.load(os.path.join(os.path.abspath(os.getcwd()),mdl_path + "_" + str(x)))
+        learn.remove_cb(ProgressCallback)
+      
         preds,y = learn.get_preds(ds_idx=1,reorder=False)
         
 
