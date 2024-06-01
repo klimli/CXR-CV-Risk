@@ -142,11 +142,11 @@ if __name__ == '__main__':
                 quit()
 
             if(m=='inceptionv4'):
-                learn = vision_learner(imgs, get_cadene_model,n_out=out_nodes)
+                learn = cnn_learner(imgs, get_cadene_model,n_out=out_nodes)
             elif(manual):
                 learn = Learner(imgs,mdl)
             else:
-                learn = vision_learner(imgs, mdl,n_out=out_nodes)
+                learn = cnn_learner(imgs, mdl,n_out=out_nodes)
             if(m=="age"):
                 numFeatures = 16
                 if(torch.has_cuda):
