@@ -92,7 +92,7 @@ if __name__ == '__main__':
         #Set architecture of current model according to specs file
         try:
             #import pdb; pdb.set_trace()
-            m = specs.Architecture[0].lower()
+            m = specs.Architecture[x].lower()
             if(m=="inceptionv4"):
                 def get_model(pretrained=True, model_name = 'inceptionv4', **kwargs ): 
                     if pretrained:
