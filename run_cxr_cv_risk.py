@@ -82,7 +82,7 @@ if __name__ == '__main__':
     for x in mbar:
         print("mbar: ",mbar)
         print("x: ",x)
-        
+        print(m)
         out_nodes = int(specs.Num_Classes[x])
         manual = False
         size = int(specs.Image_Size[x])
@@ -161,7 +161,7 @@ nn.Linear(512,numFeatures,bias=True),nn.ReLU(inplace=True),nn.BatchNorm1d(numFea
 nn.Linear(512,numFeatures,bias=True),nn.ReLU(inplace=True),nn.BatchNorm1d(numFeatures),
                                 nn.Linear(numFeatures,out_nodes,bias=True))
         except:
-            print(m)
+            print("except m: ",m)
             print("Architecture not found for model #: " + str(x))
             sys.exit(0)
 
