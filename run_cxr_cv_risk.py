@@ -158,6 +158,7 @@ nn.Linear(512,numFeatures,bias=True),nn.ReLU(inplace=True),nn.BatchNorm1d(numFea
 nn.Linear(512,numFeatures,bias=True),nn.ReLU(inplace=True),nn.BatchNorm1d(numFeatures),
                                 nn.Linear(numFeatures,out_nodes,bias=True))
         except:
+            print(m)
             print("Architecture not found for model #: " + str(x))
             sys.exit(0)
 
