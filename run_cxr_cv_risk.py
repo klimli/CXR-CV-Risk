@@ -82,7 +82,6 @@ if __name__ == '__main__':
     for x in mbar:
         print("mbar: ",mbar)
         print("x: ",x)
-        print(m)
         out_nodes = int(specs.Num_Classes[x])
         manual = False
         size = int(specs.Image_Size[x])
@@ -96,6 +95,7 @@ if __name__ == '__main__':
         try:
             #import pdb; pdb.set_trace()
             m = specs.Architecture[x].lower()
+            print("m :",m)
             if(m=="inceptionv4"):
                 def get_model(pretrained=True, model_name = 'inceptionv4', **kwargs ): 
                     if pretrained:
