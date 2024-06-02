@@ -80,6 +80,9 @@ if __name__ == '__main__':
     #Create empty array of num_images x 20 (20 model-ensemble)
     pred_arr = np.zeros((final_df.shape[0]-1,ensemble))
     for x in mbar:
+        print("mbar: ",mbar)
+        print("x: ",x)
+        
         out_nodes = int(specs.Num_Classes[x])
         manual = False
         size = int(specs.Image_Size[x])
