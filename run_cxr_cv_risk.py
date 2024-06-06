@@ -28,6 +28,10 @@ from sklearn.metrics import *
 import math
 import time
 
+#fastprogress bars disable for jupyter notebooks
+from fastprogress.fastprogress import force_console_behavior
+master_bar, progress_bar = force_console_behavior()  # This forces the progress bars to use console behavior
+
 
 num_workers = 16
 if __name__ == '__main__':
