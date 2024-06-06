@@ -28,11 +28,6 @@ from sklearn.metrics import *
 import math
 import time
 
-#fastprogress bars disable for jupyter notebooks
-from fastprogress.fastprogress import force_console_behavior
-master_bar, progress_bar = force_console_behavior()  # This forces the progress bars to use console behavior
-
-
 num_workers = 16
 if __name__ == '__main__':
 
@@ -79,7 +74,16 @@ if __name__ == '__main__':
 
     #Number of models = number of rows in dataframe
     ensemble = specs.shape[0]
+    #WYKOMENTOWANE temporary
     mbar = master_bar(range(ensemble))
+
+    from fastprogress.fastprogress import master_bar, progress_bar, force_console_behavior
+
+    # Force the progress bars to use console behavior if in an unsupported environment
+    mbar = master_bar(range(ensemble))
+
+    #Replace the fastprogress call with a standard loop if it continues to fail
+
 
     #Create empty array of num_images x 20 (20 model-ensemble)
     pred_arr = np.zeros((final_df.shape[0]-1,ensemble))
