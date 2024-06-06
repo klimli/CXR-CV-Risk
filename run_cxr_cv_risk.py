@@ -79,6 +79,8 @@ if __name__ == '__main__':
 
     from fastprogress.fastprogress import master_bar, progress_bar, force_console_behavior
 
+    # Apply the console behavior
+    force_console_behavior()
     # Force the progress bars to use console behavior if in an unsupported environment
     mbar = master_bar(range(ensemble))
 
